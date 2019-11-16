@@ -1,0 +1,48 @@
+#%RAML 1.0
+title:  raml1 
+version: 1.0
+baseUri: http://localhost:8081/yuginani
+protocols: HTTP
+mediaType: 
+  - application/json
+resourceTypes:
+  yuginani:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                <<ref1>>
+    post:
+      body:
+        application/json:
+          example:
+            <<ref2>>
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                {"Message":"resource path name created"}
+/songs:
+  type:
+    yuginani:
+      ref1: 
+        {"Songs":[
+          {"SongID":1,"SongName":"London Dreams"},
+          {"SongID":2,"SongName":"German Whip"}
+          ]}
+      ref2: 
+        {"SongID":1,"SongName":"London Dreams","Singer":"David"}
+/artist:
+  type:
+    yuginani:
+      ref1: 
+        {"Artists":[
+          {"ArtistID":1,"ArtistName":"David"},
+          {"ArtistID":2,"ArtistName":"John"}
+          ]}
+      ref2: 
+        {"ArtistID":1,"ArtistName":"John","D.O.B":"27 July 1978"}
+                                          

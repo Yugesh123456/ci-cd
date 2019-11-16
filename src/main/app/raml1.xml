@@ -18,6 +18,7 @@ http://www.mulesoft.org/schema/mule/api-platform-gw http://www.mulesoft.org/sche
     </flow>
     <flow name="get:/artist:raml1-config">
         <set-payload value="{&#xA;&quot;Artists&quot; : [&#xA;{&#xA;&quot;ArtistID&quot; : 1,&#xA;&quot;ArtistName&quot; : &quot;David&quot;&#xA;},&#xA;{&#xA;&quot;ArtistID&quot; : 2,&#xA;&quot;ArtistName&quot; : &quot;John&quot;&#xA;}&#xA;]&#xA;}" doc:name="Set Payload"/>
+        <logger message="payload" level="INFO" doc:name="Logger"/>
     </flow>
     <flow name="get:/songs:raml1-config">
         <set-payload value="{&#xA;&quot;Songs&quot; : [&#xA;{&#xA;&quot;SongID&quot; : 1,&#xA;&quot;SongName&quot; : &quot;London Dreams&quot;&#xA;},&#xA;{&#xA;&quot;SongID&quot; : 2,&#xA;&quot;SongName&quot; : &quot;German Whip&quot;&#xA;}&#xA;]&#xA;}" doc:name="Set Payload"/>
